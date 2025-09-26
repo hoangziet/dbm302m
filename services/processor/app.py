@@ -101,10 +101,10 @@ def on_message(ws, message):
     ws.processor.handle_message(message)
 
 def on_error(ws, error):
-    logging.error(f"WebSocket error:", error)
+    logging.error("WebSocket error: %s", error)
 
 def on_close(ws, close_status_code, close_msg):
-    logging.info("WebSocket connection closed:", close_status_code, close_msg)
+    logging.info("WebSocket connection closed: status=%s msg=%s", close_status_code, close_msg)
     
 def on_open(ws):
     logging.info("WebSocket connection opened")
@@ -123,7 +123,7 @@ def main():
             ws.processor = Processor()
             ws.run_forever(ping_interval=15, ping_timeout=10)
         except Exception as e:
-            logging.error("WebSocket connection error:", e)
+            logging.error("WebSocket connection error: %s", e)
             time.sleep(5)
 
 
