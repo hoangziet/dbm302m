@@ -7,9 +7,8 @@ def on_message(ws, message):
     # print(f"Trade ID: {data['t']} | Price: {data['p']} | Quantity: {data['q']}")
     # print(len(data))
     # print(data[0].keys())
-    for dat in data:
-        if dat.get("s").startswith("BUSD"):
-            print("CHECK")
+    print(data)
+    
         
 def on_error(ws, error):
     print("Error:", error)
