@@ -27,6 +27,7 @@ docker compose up -d postgres superset processor
 ```text
 postgresql+psycopg2://crypto:crypto@postgres:5432/crypto
 ```
+
 - Dữ liệu được lưu ở bảng: **public.coin_ticks**
 
 ---
@@ -53,4 +54,10 @@ postgresql+psycopg2://crypto:crypto@postgres:5432/crypto
 ```text
 "coin_ticks_pkey" PRIMARY KEY, btree (symbol, event_time)
 "idx_coin_ticks_symbol_time_desc" btree (symbol, event_time DESC)
+```
+
+## 5. Import dashboard
+```bash
+docker exec -it dbm302m-superset-1 superset import-dashboards --path /app/superset_exports/dashboards.zip
+
 ```
