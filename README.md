@@ -10,11 +10,11 @@ Hệ thống phân tích và dự đoán giá cryptocurrency real-time sử dụ
 ## Kiến trúc hệ thống
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Binance API   │───▶│   Processor      │───▶│   PostgreSQL    │
+│   Binance API   │───▶│   Processor      │───▶│   PostgreSQL   │
 │   (WebSocket)   │    │   Service        │    │   Database      │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
-                                                         │
-┌─────────────────┐    ┌──────────────────┐            │
+                                                        │
+┌─────────────────┐    ┌──────────────────┐             │
 │   Apache        │◀───│   Prophet        │◀───────────┘
 │   Superset      │    │   Forecaster     │
 └─────────────────┘    └──────────────────┘
